@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedNexus | Dashboard</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Main Application Layout -->
+    <div class="app-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>Med<span>Nexus</span></h2>
+                <p>Medical Research Management</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="index.html" class="nav-link active">
+                    Dashboard
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Research Projects
+                </a>
+
+                <a href="records.html" class="nav-link">
+                    Research Records
+                </a>
+
+                <a href="tracker.html" class="nav-link">
+                    Progress Tracker
+                </a>
+
+                <a href="library.html" class="nav-link">
+                    Research Library
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>MedNexus Prototype</p>
+                <small>Version 1.0</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Dashboard Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Overview of your medical research activities</p>
+                </div>
+
+                <div class="user-info">
+                    <div class="user-avatar">R</div>
+                    <div>
+                        <strong>Researcher</strong>
+                        <small>Research Account</small>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div>
+                    <h2>Welcome to MedNexus!</h2>
+                    <p>
+                        Manage your research projects, organize records,
+                        and monitor your research progress in one place.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Dashboard Statistics -->
+            <section class="statistics-section">
+
+                <div class="stat-card">
+                    <p>Total Research Projects</p>
+                    <h2 id="totalProjects">0</h2>
+                    <small>All registered projects</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Ongoing Projects</p>
+                    <h2 id="ongoingProjects">0</h2>
+                    <small>Currently in progress</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Completed Projects</p>
+                    <h2 id="completedProjects">0</h2>
+                    <small>Successfully completed</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Research Records</p>
+                    <h2 id="totalRecords">0</h2>
+                    <small>Saved research documents</small>
+                </div>
+
+            </section>
+
+
+            <!-- Dashboard Overview -->
+            <section class="dashboard-grid">
+
+                <!-- Research Progress -->
+                <div class="dashboard-card progress-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Research Progress</h3>
+                            <p>Overview of project completion</p>
+                        </div>
+                    </div>
+
+                    <div id="progressOverview">
+                        <p>No research progress available yet.</p>
+                    </div>
+                </div>
+
+
+                <!-- Recent Activities -->
+                <div class="dashboard-card activity-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Recent Activities</h3>
+                            <p>Your latest research updates</p>
+                        </div>
+                    </div>
+
+                    <div id="recentActivities">
+                        <p>No recent activities yet.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Dashboard Footer -->
+            <footer class="main-footer">
+                <p>
+                    &copy; 2026 MedNexus. Medical Research Management System.
+                </p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

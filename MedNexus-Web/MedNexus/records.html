@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedNexus | Research Records</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Med<span>Nexus</span></h2>
+            <p>Medical Research Management</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-heading">MAIN MENU</p>
+
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="projects.html" class="nav-link">Research Projects</a>
+            <a href="records.html" class="nav-link active">Research Records</a>
+            <a href="tracker.html" class="nav-link">Progress Tracker</a>
+            <a href="library.html" class="nav-link">Research Library</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>MedNexus Prototype</p>
+            <small>Version 1.0</small>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>Research Records</h1>
+                <p>Manage and organize your research documents</p>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">R</div>
+                <div>
+                    <strong>Researcher</strong>
+                    <small>Research Account</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Page Toolbar -->
+        <section class="projects-toolbar">
+            <div>
+                <h2>All Research Records</h2>
+                <p>Store and manage your research documentation</p>
+            </div>
+
+            <button class="primary-btn" id="addRecordBtn">
+                + Add New Record
+            </button>
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section class="project-filters">
+            <input
+                type="search"
+                id="recordSearch"
+                placeholder="Search research records..."
+            >
+
+            <select id="recordTypeFilter">
+                <option value="All">All Record Types</option>
+                <option value="Proposal">Proposal</option>
+                <option value="Manuscript">Manuscript</option>
+                <option value="Report">Report</option>
+                <option value="Other">Other</option>
+            </select>
+        </section>
+
+
+        <!-- Records Table -->
+        <section class="project-table-container">
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Research Title</th>
+                        <th>Record Type</th>
+                        <th>Author</th>
+                        <th>Date Created</th>
+                        <th>Summary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="recordTableBody">
+                    <!-- Records will be displayed here -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <footer class="main-footer">
+            <p>&copy; 2026 MedNexus. Medical Research Management System.</p>
+        </footer>
+
+    </main>
+</div>
+
+
+<!-- Add/Edit Record Modal -->
+<div class="modal" id="recordModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2 id="recordModalTitle">Add New Record</h2>
+                <p>Enter the research record details below.</p>
+            </div>
+
+            <button class="close-btn" id="closeRecordModal">&times;</button>
+        </div>
+
+
+        <form id="recordForm">
+
+            <input type="hidden" id="recordId">
+
+            <label for="recordTitle">Research Title</label>
+            <input type="text" id="recordTitle" required>
+
+            <label for="recordType">Record Type</label>
+            <select id="recordType" required>
+                <option value="">Select Record Type</option>
+                <option value="Proposal">Proposal</option>
+                <option value="Manuscript">Manuscript</option>
+                <option value="Report">Report</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="recordAuthor">Author</label>
+            <input type="text" id="recordAuthor" required>
+
+            <label for="recordDate">Date Created</label>
+            <input type="date" id="recordDate" required>
+
+            <label for="recordSummary">Summary</label>
+            <textarea
+                id="recordSummary"
+                rows="4"
+                placeholder="Enter a short description of the research record..."
+                required
+            ></textarea>
+
+            <div class="modal-actions">
+                <button type="button" class="secondary-btn" id="cancelRecordModal">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    Save Record
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/records.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Library | MedNexus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Med<span>Nexus</span></h2>
+            <p>Medical Research Management</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-heading">MAIN MENU</p>
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="projects.html" class="nav-link">Research Projects</a>
+            <a href="records.html" class="nav-link">Research Records</a>
+            <a href="tracker.html" class="nav-link">Progress Tracker</a>
+            <a href="library.html" class="nav-link active">Research Library</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>MedNexus Research System</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>Research Library</h1>
+                <p>Discover and organize useful research resources.</p>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">R</div>
+                <div>
+                    <strong>Researcher</strong>
+                    <small>Research Account</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-heading">
+            <div>
+                <h2>Research Resources</h2>
+                <p>Keep your medical research references organized in one place.</p>
+            </div>
+
+            <button class="primary-btn" id="addResourceBtn">
+                + Add Resource
+            </button>
+        </section>
+
+        <section class="library-summary">
+            <div class="stat-card">
+                <p>Total Resources</p>
+                <h2 id="totalResources">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Medical Journals</p>
+                <h2 id="journalCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Research Articles</p>
+                <h2 id="articleCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Useful Websites</p>
+                <h2 id="websiteCount">0</h2>
+            </div>
+        </section>
+
+        <section class="library-section">
+
+            <div class="library-toolbar">
+                <input
+                    type="text"
+                    id="resourceSearch"
+                    placeholder="Search research resources..."
+                >
+
+                <select id="resourceCategoryFilter">
+                    <option value="All">All Categories</option>
+                    <option value="Medical Journal">Medical Journals</option>
+                    <option value="Research Article">Research Articles</option>
+                    <option value="Reference Material">Reference Materials</option>
+                    <option value="Useful Website">Useful Websites</option>
+                </select>
+            </div>
+
+            <div class="resource-grid" id="resourceGrid"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Add/Edit Resource Modal -->
+    <div class="modal" id="resourceModal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 id="resourceModalTitle">Add New Resource</h2>
+                <button type="button" class="close-btn" id="closeResourceModal">
+                    &times;
+                </button>
+            </div>
+
+            <form id="resourceForm">
+
+                <input type="hidden" id="resourceId">
+
+                <div class="form-group">
+                    <label for="resourceTitle">Resource Title</label>
+                    <input
+                        type="text"
+                        id="resourceTitle"
+                        required
+                        placeholder="Enter resource title"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceCategory">Category</label>
+                    <select id="resourceCategory" required>
+                        <option value="">Select category</option>
+                        <option value="Medical Journal">Medical Journal</option>
+                        <option value="Research Article">Research Article</option>
+                        <option value="Reference Material">Reference Material</option>
+                        <option value="Useful Website">Useful Website</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceAuthor">Author / Organization</label>
+                    <input
+                        type="text"
+                        id="resourceAuthor"
+                        required
+                        placeholder="Enter author or organization"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceUrl">Resource URL</label>
+                    <input
+                        type="url"
+                        id="resourceUrl"
+                        required
+                        placeholder="https://example.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceDescription">Description</label>
+                    <textarea
+                        id="resourceDescription"
+                        rows="4"
+                        required
+                        placeholder="Briefly describe this resource"
+                    ></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="secondary-btn" id="cancelResourceBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn">
+                        Save Resource
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/library.js"></script>
+
+</body>
+</html>

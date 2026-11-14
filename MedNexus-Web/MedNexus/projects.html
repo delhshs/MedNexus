@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedNexus | Research Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Med<span>Nexus</span></h2>
+            <p>Medical Research Management</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-heading">MAIN MENU</p>
+
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="projects.html" class="nav-link active">Research Projects</a>
+            <a href="records.html" class="nav-link">Research Records</a>
+            <a href="tracker.html" class="nav-link">Progress Tracker</a>
+            <a href="library.html" class="nav-link">Research Library</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>MedNexus Prototype</p>
+            <small>Version 1.0</small>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>Research Projects</h1>
+                <p>Manage and organize your medical research projects</p>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">R</div>
+                <div>
+                    <strong>Researcher</strong>
+                    <small>Research Account</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Actions -->
+        <section class="projects-toolbar">
+            <div>
+                <h2>All Projects</h2>
+                <p>View and manage your research activities</p>
+            </div>
+
+            <button class="primary-btn" id="addProjectBtn">
+                + Add New Project
+            </button>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="project-filters">
+            <input
+                type="search"
+                id="projectSearch"
+                placeholder="Search research projects..."
+            >
+
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Planning">Planning</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </section>
+
+        <!-- Project Table -->
+        <section class="project-table-container">
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Project Title</th>
+                        <th>Category</th>
+                        <th>Research Leader</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="projectTableBody">
+                    <!-- JavaScript displays projects here -->
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 MedNexus. Medical Research Management System.</p>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Add/Edit Project Modal -->
+<div class="modal" id="projectModal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2 id="modalTitle">Add New Project</h2>
+                <p>Enter the research project details below.</p>
+            </div>
+
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+
+        <form id="projectForm">
+
+            <input type="hidden" id="projectId">
+
+            <label for="projectTitle">Project Title</label>
+            <input type="text" id="projectTitle" required>
+
+            <label for="projectCategory">Research Category</label>
+            <select id="projectCategory" required>
+                <option value="">Select Category</option>
+                <option value="Public Health">Public Health</option>
+                <option value="Health Informatics">Health Informatics</option>
+                <option value="Nutrition">Nutrition</option>
+                <option value="Healthcare Services">Healthcare Services</option>
+                <option value="Medical Science">Medical Science</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="projectLeader">Research Leader</label>
+            <input type="text" id="projectLeader" required>
+
+            <label for="projectStatus">Project Status</label>
+            <select id="projectStatus" required>
+                <option value="Planning">Planning</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <label for="projectProgress">Progress (%)</label>
+            <input
+                type="number"
+                id="projectProgress"
+                min="0"
+                max="100"
+                value="0"
+                required
+            >
+
+            <div class="modal-actions">
+                <button type="button" class="secondary-btn" id="cancelModalBtn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    Save Project
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+
+</body>
+</html>
